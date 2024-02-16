@@ -1,0 +1,32 @@
+<div>
+    <div>
+        <div class="container col-md-8 mb-4 pb-4">
+            <div class="m-4 card bg-dark text-light" id="box">
+                <div class="card-body bg-dark">
+                  <h5 class="card-title text-info">Order Details</h5><br>
+                  <p class="card-text">OrderId: {{order.orderNo}}</p>
+                  <p class="card-text">contactName: {{order.contactName}}</p>
+                  <p class="card-text">orderDate: {{order.orderDate}}</p>
+                  <br>
+                  <h3> Total Items</h3>
+                  <hr>
+                  <div *ngFor="let items of orderItems">
+                    <p class="text-success">ItemsNo : {{items.itemNo}}</p>
+                    <p>Items Name : {{items.name}}</p>
+                    <p>Items Quantity : {{items.quantity}}</p>
+                    <p>Items Price : {{items.price}}</p>
+                    <p>Items Value : {{items.itemValue}}</p>
+                 </div>
+                 <hr>
+                  <p class="card-text">orderTotal: {{order.orderTotal}}</p>
+                  <p class="card-text">taxTotal: {{order.taxTotal}}</p>
+                  <p class="card-text">grandTotal: {{order.grandTotal}}</p>
+                 </div>
+                </div>
+            </div>
+    </div>
+</div>
+
+<button class="inp" routerLink="/view-orders"> Back To Orders </button>
+          
+<router-outlet></router-outlet>

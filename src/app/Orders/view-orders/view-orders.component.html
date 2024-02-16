@@ -1,0 +1,64 @@
+<button (click)="getAllOrders()" class="inp" >View Orders</button><br><br><br><br><br><br><br><br>
+<button routerLink="/place-orders" class="info" >Place Order</button>
+
+<div class="view-orders-container" *ngIf="isadd">
+    
+    <table class="table table-dark">
+      <thead class="thead-dark">
+        <tr> <h2 style="background-color: black; color: beige;">View Orders</h2> </tr>
+        <tr class="justify-content-center" style="border: 2px;">
+          <th style="border: 2px solid white;">Order No</th>
+          <th style="border: 2px solid white;">Contact Name</th>
+          <th style="border: 2px solid white;">Order Date</th>
+          <th style="border: 2px solid white;">Items Ordered</th>
+          <th style="border: 2px solid white;">Order Total</th>
+          <th style="border: 2px solid white;">Tax Total</th>
+          <th style="border: 2px solid white;">Grand Total</th>
+          <th style="border: 2px solid white;">Details</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- 
+          //samples:
+          <tr class="justify-content-center">
+          <td>1</td>
+          <td>Pizza</td>
+          <td>23-02-2024</td>
+          <td>2</td>
+          <td>45.00</td>
+          <td>5.00</td>
+          <td>50.00</td>
+          <td><a routerLink="/view-order-info" class="btn btn-secondary">View Details</a></td>
+          <td><a (click)="delete(items.orderNo)" class="btn btn-secondary">Delete</a></td>
+
+        </tr>
+        
+        <tr class="justify-content-center">
+            <td>2</td>
+            <td>Burger</td>
+            <td>22-12-2023</td>
+            <td>2</td>
+            <td>35.00</td>
+            <td>15.00</td>
+            <td>50.00</td>
+          <td><a routerLink="/view-order-info" class="btn btn-secondary">View Details</a></td>
+          <td><a (click)="delete(items.orderNo)" class="btn btn-secondary">Delete</a></td>
+
+        </tr> -->
+
+        <tr *ngFor = "let items of orders" class="justify-content-center" style="border: 2px;">
+            <td style="border: 2px solid white;">{{items.orderNo}}</td>
+            <td style="border: 2px solid white;">{{items.contactName}}</td>
+            <td style="border: 2px solid white;">{{items.orderDate}}</td>
+            <td style="border: 2px solid white;">{{items.itemsOrdered}}</td>
+            <td style="border: 2px solid white;"> {{items.orderTotal}}</td>
+            <td style="border: 2px solid white;">{{items.taxTotal}}</td>
+            <td style="border: 2px solid white;">{{items.grandTotal}}</td>
+            <td style="border: 2px solid white;"><a routerLink="/view-order-info" [queryParams]="{ orderNo: items.orderNo }" class="btn btn-secondary">View Details</a></td>
+            <td style="border: 2px solid white;"><a (click)="delete(items.id)" class="btn btn-secondary">Delete</a></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <router-outlet></router-outlet>
+  

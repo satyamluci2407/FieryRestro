@@ -1,0 +1,14 @@
+.fiery{
+    border-radius: 50%;
+    height: 60px;
+    width: 60px;
+}
+#blnk {
+    animation: blinker 1s linear infinite;
+  }
+  
+  @keyframes blinker {
+    50% {
+      opacity: 0;
+    }
+  }

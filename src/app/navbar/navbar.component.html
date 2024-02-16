@@ -1,0 +1,26 @@
+<nav class="p-2 navbar navbar-expand-lg navbar-dark bg-secondary" id="myTopnav">
+    <div class="container-fluid">
+    <a class="navbar-brand white fs-3" routerLink="/" style="font-family: cursive; color: blanchedalmond;" id="blnk"><img src="assets\Images\Fiery.jpg" class="fiery">&nbsp;&nbsp;Fiery Restaurant</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarnav" aria-controls="navbarnav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+ 
+    <div class="collapse navbar-collapse justify-content-end" id="navbarnav">
+      <ul class="navbar-nav mr-auto">
+        <li class="md-4 nav-item" routerLinkActive="active">
+          <a class="nav-link fs-5" routerLink="/home">Home&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+        </li>
+        <li class="nav-item" routerLinkActive="active">
+          <a class="nav-link fs-5" routerLink="/view-orders">Orders&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
+        </li>
+        <li class="nav-item" routerLinkActive="active">
+            <a class="nav-link fs-5" routerLink="/">Payments</a>
+        </li>
+        
+      </ul>
+     
+    </div>
+    </div>
+  </nav>
+
+  <router-outlet></router-outlet>

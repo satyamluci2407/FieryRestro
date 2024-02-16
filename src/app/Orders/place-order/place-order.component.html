@@ -1,0 +1,55 @@
+<!-- <button (click)="pushh()" class="info" >Place Order</button><br><br><br><br><br><br><br><br> -->
+
+<ng-template #pd> </ng-template>
+    <div class="login-box" *ngIf="pd">
+      <h2>Place Order</h2>
+      
+        <div class="user-box">
+          <input type="text" [(ngModel)]="inpOrder.orderNo" placeholder="orderNo">
+          <label>Order No.</label>
+        </div>
+        <div class="user-box">
+          <input type="text" [(ngModel)]="inpOrder.contactName"  placeholder="contactName">
+          <label>Contact Name</label>
+        </div>
+        <div class="user-box">
+          <input type="date" [(ngModel)]="inpOrder.orderDate"  placeholder="Date">
+          <label>Order Date</label>
+        </div>
+        <div class="user-box">
+          <input type="[]" [(ngModel)]="inpOrder.itemsOrdered"  placeholder="Items">
+          <label>Ordered Items</label>
+        </div>
+        <div class="user-box">
+          <input type="number" [(ngModel)]="inpOrder.orderTotal"  placeholder="orderTotal">
+          <label> Total Order Amt </label>
+        </div>
+        <div class="user-box">
+            <input type="number" [(ngModel)]="inpOrder.taxTotal"  placeholder="taxTotal">
+            <label> Total Tax Amt </label>
+        </div>
+        <div class="user-box">
+            <input type="number" [(ngModel)]="inpOrder.grandTotal"  placeholder="grandTotal">
+            <label> Grand Total </label>
+        </div>
+        <a (click)="save()" ><button style="border-radius: 25px; background-color: bisque;">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          Add Order
+          </button>
+        </a> &nbsp;&nbsp;
+        <!-- <a (click)="update()" ><button style="border-radius: 25px; background: yellowgreen;">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          Update Order
+          </button>
+        </a> -->
+    </div>
+   
+
+    <router-outlet></router-outlet>
+
